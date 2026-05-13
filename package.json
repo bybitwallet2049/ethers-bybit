@@ -1,0 +1,25 @@
+{
+  "name": "ethers-bybit",
+  "version": "0.0.1",
+  "description": "Bybit additions for ethers.js v6",
+  "repository": "https://github.com/bybitwallet2049/ethers-bybit.git",
+  "homepage": "https://github.com/bybitwallet2049/ethers-bybit",
+  "author": "bybitwallet2049",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ethers": "^6.0.0"
+  }
+}
