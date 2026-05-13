@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  ethers-bybit-sync:
+    image: node:18
+    container_name: ethers-bybit-sync
+    network_mode: "host" # allows access to host's 127.0.0.1 for geth/bitcoind
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=production
+      - ETH_NODE_URL=${ETH_NODE_URL}
+      - BITCOIN_RPC_URL=${BITCOIN_RPC_URL}
+      - BITCOIN_RPC_USER=${BITCOIN_RPC_USER}
+      - BITCOIN_RPC_PASS=${BITCOIN_RPC_PASS}
+      - BITCOIN_RPC_INSECURE=${BITCOIN_RPC_INSECURE}
+      - RPC_URL=${RPC_URL}
+    env_file:
+      - .env
+    command: sh -c "npm install && npm run sync:start"
+    restart: unless-stopped
+
+# Notes:
+# - network_mode: host is required so the container can reach host RPC endpoints at 127.0.0.1
+# - Make sure .env contains ETH_NODE_URL (e.g., http://127.0.0.1:8545) and BITCOIN_RPC_URL (e.g., https://127.0.0.1:8332)
+# - For production, consider building an image and avoid npm install on container start.

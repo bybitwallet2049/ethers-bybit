@@ -14,22 +14,28 @@
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "prepublishOnly": "npm run build",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "dev": "ts-node src/index.ts",
+    "sync:eth": "ts-node src/sync/ethSync.ts",
+    "sync:btc": "ts-node src/sync/btcSync.ts",
+    "sync:start": "ts-node src/sync/index.ts",
+    "start": "node dist/index.js"
   },
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "ethers": "^6.16.0",
     "axios": "^1.16.0",
-    "dotenv": "^17.4.2",
-    "bybit-api": "^4.6.2",
     "bitcoinjs-lib": "^7.0.1",
-    "bybit-api-node": "^1.0.3"
+    "bybit-api": "^4.6.2",
+    "bybit-api-node": "^1.0.3",
+    "dotenv": "^17.4.2",
+    "ethers": "^6.16.0",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
-    "typescript": "^6.0.3",
+    "@types/node": "^25.7.0",
     "ts-node": "^10.9.2",
-    "@types/node": "^25.7.0"
+    "typescript": "^6.0.3"
   }
 }
