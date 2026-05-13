@@ -20,6 +20,16 @@
     "node": ">=18"
   },
   "dependencies": {
-    "ethers": "^6.0.0"
+    "ethers": "^6.16.0",
+    "axios": "^1.16.0",
+    "dotenv": "^17.4.2",
+    "bybit-api": "^4.6.2",
+    "bitcoinjs-lib": "^7.0.1",
+    "bybit-api-node": "^1.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "ts-node": "^10.9.2",
+    "@types/node": "^25.7.0"
   }
 }
