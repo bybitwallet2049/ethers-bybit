@@ -1,0 +1,25 @@
+# config/viribele.yaml
+# Placeholders are filled from environment variables by the loader at runtime.
+# Do NOT put real secrets in this committed file. Set them in environment or GitHub Secrets.
+
+bybit:
+  api_key: ${BYBIT_API_KEY}          # Bybit API key
+  api_secret: ${BYBIT_API_SECRET}    # Bybit API secret (KEEP SECRET)
+  uid: ${BYBIT_UID}                  # Bybit user id
+  sender:
+    btc: ${BYBIT_SENDER_BTC}         # Sender BTC address
+    eth: ${BYBIT_SENDER_ETH}         # Sender ETH address
+  receive:
+    btc: ${BYBIT_RECEIVE_BTC}        # Receive BTC address
+    eth: ${BYBIT_RECEIVE_ETH}        # Receive ETH address
+
+token:
+  erc20_usdt: ${TOKEN_CONTRAC_USDT}  # USDT ERC-20 contract address
+
+wallet:
+  eth_private_key_buffer: ${KEY_ETH_PRIVATE_KEY_BUFFER}
+  btc_private_key_buffer: ${KEY_BTC_PRIVATE_KEY_BUFFER}
+
+network:
+  rpc_url: ${RPC_URL}
+  btc_network: ${BTC_NETWORK}
